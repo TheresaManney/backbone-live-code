@@ -137,3 +137,7 @@ $(document).ready(function() {
   console.log("Completed? " + myTask.get("completed"));
   */
 });
+
+// Collections Order collections of models, with them you can create your own function that will be a listener.. the update can be delete, add. Makes it so each model has a unique cid
+// Collections can sync with an api (like a rails api for example)
+// Advantages of Collections is that we can now have listener method for each model instance (i think this is right at least)
