@@ -67,10 +67,17 @@ var render = function(task) {
   var templateObject = _.template(templateText);
 
   // Fill in the ERB with date from our task.
-  var compiledHTML = templateObject(task.toJSON());
+  //made the compiledHTML a jQuery selection
+  var compiledHTML = $(templateObject(task.toJSON()));
 
   // Append the result to the DOM
   $('.todo-items').append(compiledHTML);
+
+  // looking for the alert / delete button
+  // when it is clicked (when the function get called) the specific task will be deleted
+  compiledHTML.find('button.alert').click({task: task }, function(params){
+    myTaskList.remove(params.data.task);
+  });
 };
 
 var renderList = function(taskList) {
@@ -89,7 +96,7 @@ $(document).ready(function() {
   // .on is a method that collections and models have (there is also .new, .validate, .change, and so on... can check Backbone documentation to find more)
   myTaskList.on("update", function() {
     renderList(myTaskList);
-  })
+  });
 
   $('#add-task').click(function() {
     // Creating a new Task
