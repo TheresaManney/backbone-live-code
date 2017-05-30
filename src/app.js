@@ -25,7 +25,7 @@ var myTask = new Task({
   completed: false
 });
 
-$(document).ready(function() {
+var render = function(task) {
   // Get the Template using jQuery
   // $('#test-area').append($('<p>Hello World!</p>'));
   var templateText = $('#taskItemTemplate').html();
@@ -38,8 +38,13 @@ $(document).ready(function() {
 
   // Append the result to the DOM
   $('.todo-items').append(compiledHTML);
+};
 
-  /* // checking that the console got our new task instance
+$(document).ready(function() {
+  render(myTask);
+
+  /* Begining check...
+  // checking that the console got our new task instance
   console.log(myTask);
   console.log(myTask.get("title"));
   // to change an attribute in backbone, we use 'set'
@@ -49,5 +54,6 @@ $(document).ready(function() {
     description: "Great"
   });
 
-  console.log("Completed? " + myTask.get("completed")); */
+  console.log("Completed? " + myTask.get("completed"));
+  */
 });
