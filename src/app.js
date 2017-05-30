@@ -1,4 +1,6 @@
 import $ from 'jquery';
+// Telling webpack to go to the underscore library and save whatever it gets from underscore to the '_' variable.
+import _ from 'underscore';
 
 var taskData = [
   {
