@@ -4,18 +4,26 @@ import _ from 'underscore';
 // we added line 5 after adding things to task.js file (which was how we created out model)
 import Task from './models/task.js';
 
+import TaskList from './collections/task_list.js';
+
 var taskData = [
   {
     title: 'Mow the lawn',
-    description: 'Must be finished before BBQ on Sat afternoon'
+    description: 'Must be finished before BBQ on Sat afternoon',
+    completed: false
   }, {
     title: 'Go to the Bank',
-    description: 'Need to make a transfer'
+    description: 'Need to make a transfer',
+    completed: true
   }, {
     title: 'Tune the Piano',
-    description: 'High C is missing or something???'
+    description: 'High C is missing or something???',
+    completed: false
+
   }
 ];
+
+var myTaskList = new TaskList(taskData);
 
 //can create any attributes we want (including validations in the future)
 //this is a new task instance
@@ -65,15 +73,28 @@ var render = function(task) {
   $('.todo-items').append(compiledHTML);
 };
 
-$(document).ready(function() {
-  render(myTask);
-  render(mySecondTask);
-
-  $("#add-task").click(function() {
-    var formData = getFormData();
-    var newTask = new Task(formData);
-    render(newTask);
+var renderList = function(taskList) {
+  // Clear the list
+  $('.todo-items').empty();
+  // Loop through rendering each task
+  taskList.each(function(task) {
+    render(task);
   });
+};
+
+$(document).ready(function() {
+  // COLLECTION STUFF
+  renderList(myTaskList);
+
+  // BELOW WAS FOR MODEL STUFF
+  // render(myTask);
+  // render(mySecondTask);
+  //
+  // $("#add-task").click(function() {
+  //   var formData = getFormData();
+  //   var newTask = new Task(formData);
+  //   render(newTask);
+  // });
 
   /* Begining check...
   // checking that the console got our new task instance
