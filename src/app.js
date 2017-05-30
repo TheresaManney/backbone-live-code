@@ -68,6 +68,8 @@ var render = function(task) {
 
   // Fill in the ERB with date from our task.
   //made the compiledHTML a jQuery selection
+  // console.log($(templateObject(task.toJSON())));
+  // console.log(templateObject(task.toJSON()));
   var compiledHTML = $(templateObject(task.toJSON()));
 
   // Append the result to the DOM
