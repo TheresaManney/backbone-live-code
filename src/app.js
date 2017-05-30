@@ -25,6 +25,31 @@ var myTask = new Task({
   completed: false
 });
 
+var mySecondTask = new Task({
+  title: "Walk dog",
+  desription: "walk walk walk",
+  completed: false
+});
+
+var getFormData = function() {
+  // val is a jQuery function
+  var formTitle = $('#title').val();
+  // clearing out title...
+  $('#title').val('');
+
+  var formDescription = $('description').val();
+  $('description').val('');
+
+  var formCompleted = $('#completed-checkbox').is(":checked");
+  $('#completed-checkbox').prop('checked', false);
+
+  return {
+    title: formTitle,
+    description: formDescription,
+    completed: formCompleted
+  };
+};
+
 var render = function(task) {
   // Get the Template using jQuery
   // $('#test-area').append($('<p>Hello World!</p>'));
@@ -34,7 +59,7 @@ var render = function(task) {
   var templateObject = _.template(templateText);
 
   // Fill in the ERB with date from our task.
-  var compiledHTML = templateObject(myTask.toJSON());
+  var compiledHTML = templateObject(task.toJSON());
 
   // Append the result to the DOM
   $('.todo-items').append(compiledHTML);
@@ -42,6 +67,13 @@ var render = function(task) {
 
 $(document).ready(function() {
   render(myTask);
+  render(mySecondTask);
+
+  $("#add-task").click(function() {
+    var formData = getFormData();
+    var newTask = new Task(formData);
+    render(newTask);
+  });
 
   /* Begining check...
   // checking that the console got our new task instance
