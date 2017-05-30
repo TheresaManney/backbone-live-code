@@ -85,6 +85,16 @@ var renderList = function(taskList) {
 $(document).ready(function() {
   // COLLECTION STUFF
   renderList(myTaskList);
+  $('#add-task').click(function() {
+    // Creating a new Task
+    // With the form data
+    var task = new Task(getFormData());
+
+    // Add it to the list
+    myTaskList.add(task);
+    // re-render the list
+    renderList(myTaskList);
+  });
 
   // BELOW WAS FOR MODEL STUFF
   // render(myTask);
