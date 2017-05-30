@@ -26,7 +26,28 @@ var myTask = new Task({
 });
 
 $(document).ready(function() {
-  // checking that the console got our new task instance 
-  console.log(myTask);
+  // Get the Template using jQuery
   // $('#test-area').append($('<p>Hello World!</p>'));
+  var templateText = $('#taskItemTemplate').html();
+
+  // Create an Underscore Template Object
+  var templateObject = _.template(templateText);
+
+  // Fill in the ERB with date from our task.
+  var compiledHTML = templateObject(myTask.toJSON());
+
+  // Append the result to the DOM
+  $('.todo-items').append(compiledHTML);
+
+  /* // checking that the console got our new task instance
+  console.log(myTask);
+  console.log(myTask.get("title"));
+  // to change an attribute in backbone, we use 'set'
+  myTask.set("completed", true);
+  myTask.set({
+    title: "This is Backbone!",
+    description: "Great"
+  });
+
+  console.log("Completed? " + myTask.get("completed")); */
 });
