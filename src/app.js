@@ -1,6 +1,8 @@
 import $ from 'jquery';
 // Telling webpack to go to the underscore library and save whatever it gets from underscore to the '_' variable.
 import _ from 'underscore';
+// we added line 5 after adding things to task.js file (which was how we created out model)
+import Task from './models/task.js';
 
 var taskData = [
   {
