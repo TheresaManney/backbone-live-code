@@ -85,6 +85,12 @@ var renderList = function(taskList) {
 $(document).ready(function() {
   // COLLECTION STUFF
   renderList(myTaskList);
+
+  // .on is a method that collections and models have (there is also .new, .validate, .change, and so on... can check Backbone documentation to find more)
+  myTaskList.on("update", function() {
+    renderList(myTaskList);
+  })
+
   $('#add-task').click(function() {
     // Creating a new Task
     // With the form data
@@ -93,7 +99,7 @@ $(document).ready(function() {
     // Add it to the list
     myTaskList.add(task);
     // re-render the list
-    renderList(myTaskList);
+    // renderList(myTaskList);
   });
 
   // BELOW WAS FOR MODEL STUFF
