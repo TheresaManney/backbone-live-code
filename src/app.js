@@ -75,6 +75,8 @@ var render = function(task) {
 
   // looking for the alert / delete button
   // when it is clicked (when the function get called) the specific task will be deleted
+  // Since compiledHTML is now s jQuery object, we can now set the .find method on it.
+  // ALSO... params does not need to be called params, it could be called event or anything else that makes better sence if we want
   compiledHTML.find('button.alert').click({task: task }, function(params){
     myTaskList.remove(params.data.task);
   });
