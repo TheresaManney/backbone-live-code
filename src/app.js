@@ -37,8 +37,8 @@ var getFormData = function() {
   // clearing out title...
   $('#title').val('');
 
-  var formDescription = $('description').val();
-  $('description').val('');
+  var formDescription = $('#description').val();
+  $('#description').val('');
 
   var formCompleted = $('#completed-checkbox').is(":checked");
   $('#completed-checkbox').prop('checked', false);
