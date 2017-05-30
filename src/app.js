@@ -17,6 +17,16 @@ var taskData = [
   }
 ];
 
+//can create any attributes we want (including validations in the future)
+//this is a new task instance
+var myTask = new Task({
+  title: "Create a Model!",
+  desription: "Need to extend Backbone.Model",
+  completed: false
+});
+
 $(document).ready(function() {
-  $('#test-area').append($('<p>Hello World!</p>'));
+  // checking that the console got our new task instance 
+  console.log(myTask);
+  // $('#test-area').append($('<p>Hello World!</p>'));
 });
