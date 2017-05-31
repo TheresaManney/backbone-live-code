@@ -27,17 +27,17 @@ var myTaskList = new TaskList(taskData);
 
 //can create any attributes we want (including validations in the future)
 //this is a new task instance
-var myTask = new Task({
-  title: "Create a Model!",
-  desription: "Need to extend Backbone.Model",
-  completed: false
-});
+// var myTask = new Task({
+//   title: "Create a Model!",
+//   desription: "Need to extend Backbone.Model",
+//   completed: false
+// });
 
-var mySecondTask = new Task({
-  title: "Walk dog",
-  desription: "walk walk walk",
-  completed: false
-});
+// var mySecondTask = new Task({
+//   title: "Walk dog",
+//   desription: "walk walk walk",
+//   completed: false
+// });
 
 var getFormData = function() {
   // val is a jQuery function
@@ -84,6 +84,7 @@ var getFormData = function() {
 //   });
 // };
 
+/*
 var renderList = function(taskList) {
   // Clear the list
   $('.todo-items').empty();
@@ -104,11 +105,14 @@ var renderList = function(taskList) {
     // render(task);
   });
 };
+*/
 
 $(document).ready(function() {
+  // VIEW STUFF
+
+  /*
   // COLLECTION STUFF
   renderList(myTaskList);
-
   // .on is a method that collections and models have (there is also .new, .validate, .change, and so on... can check Backbone documentation to find more)
   myTaskList.on("update", function() {
     renderList(myTaskList);
@@ -124,6 +128,7 @@ $(document).ready(function() {
     // re-render the list
     // renderList(myTaskList);
   });
+  */
 
   // BELOW WAS FOR MODEL STUFF
   // render(myTask);

@@ -21,7 +21,7 @@ var TaskListView = Backbone.View.extend({
         template: that.template
       });
       // rendered the view and appended it to 'todo-items'
-      that.$('.todo-items').append(taskView.render().el);
+      that.$('.todo-items').append(taskView.render().$el);
     });
 
     // this = myView.render().el
