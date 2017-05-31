@@ -3,7 +3,7 @@ import Backbone from 'backbone';
 
 var Task = Backbone.Model.extend({
   defaults: {
-    title: 'DEFAULT',
+    // title: 'DEFAULT',
     completed: false
   },
   logStatus: function(){

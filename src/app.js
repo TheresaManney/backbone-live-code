@@ -41,24 +41,26 @@ var myTaskList = new TaskList(taskData);
 //   completed: false
 // });
 
-var getFormData = function() {
-  // val is a jQuery function
-  var formTitle = $('#title').val();
-  // clearing out title...
-  $('#title').val('');
-
-  var formDescription = $('#description').val();
-  $('#description').val('');
-
-  var formCompleted = $('#completed-checkbox').is(":checked");
-  $('#completed-checkbox').prop('checked', false);
-
-  return {
-    title: formTitle,
-    description: formDescription,
-    completed: formCompleted
-  };
-};
+// var getFormData = function() {
+//   // val is a jQuery function
+//   var formTitle = $('#title').val();
+//   // clearing out title...
+//   $('#title').val('');
+//
+//   var formDescription = $('#description').val();
+//   $('#description').val('');
+//
+//   // Get Checkboc Checked
+//   var formCompleted = $('#completed-checkbox').is(":checked");
+//   // Clear Checkbox
+//   $('#completed-checkbox').prop('checked', false);
+//
+//   return {
+//     title: formTitle,
+//     description: formDescription,
+//     completed: formCompleted
+//   };
+// };
 
 // var render = function(task) {
 //   // Get the Template using jQuery
