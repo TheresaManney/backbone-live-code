@@ -1,5 +1,5 @@
 // models task.js
-import bakcbone from 'backbone';
+import Backbone from 'backbone';
 
 var Task = Backbone.Model.extend({
   defaults: {
