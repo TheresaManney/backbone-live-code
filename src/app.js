@@ -58,31 +58,31 @@ var getFormData = function() {
   };
 };
 
-var render = function(task) {
-  // Get the Template using jQuery
-  // $('#test-area').append($('<p>Hello World!</p>'));
-  var templateText = $('#taskItemTemplate').html();
-
-  // Create an Underscore Template Object
-  var templateObject = _.template(templateText);
-
-  // Fill in the ERB with date from our task.
-  //made the compiledHTML a jQuery selection
-  // console.log($(templateObject(task.toJSON())));
-  // console.log(templateObject(task.toJSON()));
-  var compiledHTML = $(templateObject(task.toJSON()));
-
-  // Append the result to the DOM
-  $('.todo-items').append(compiledHTML);
-
-  // looking for the alert / delete button
-  // when it is clicked (when the function get called) the specific task will be deleted
-  // Since compiledHTML is now s jQuery object, we can now set the .find method on it.
-  // ALSO... params does not need to be called params, it could be called event or anything else that makes better sence if we want
-  compiledHTML.find('button.alert').click({taskToRemove: task }, function(params){
-    myTaskList.remove(params.data.taskToRemove);
-  });
-};
+// var render = function(task) {
+//   // Get the Template using jQuery
+//   // $('#test-area').append($('<p>Hello World!</p>'));
+//   var templateText = $('#taskItemTemplate').html();
+//
+//   // Create an Underscore Template Object
+//   var templateObject = _.template(templateText);
+//
+//   // Fill in the ERB with date from our task.
+//   //made the compiledHTML a jQuery selection
+//   // console.log($(templateObject(task.toJSON())));
+//   // console.log(templateObject(task.toJSON()));
+//   var compiledHTML = $(templateObject(task.toJSON()));
+//
+//   // Append the result to the DOM
+//   $('.todo-items').append(compiledHTML);
+//
+//   // looking for the alert / delete button
+//   // when it is clicked (when the function get called) the specific task will be deleted
+//   // Since compiledHTML is now s jQuery object, we can now set the .find method on it.
+//   // ALSO... params does not need to be called params, it could be called event or anything else that makes better sence if we want
+//   compiledHTML.find('button.alert').click({taskToRemove: task }, function(params){
+//     myTaskList.remove(params.data.taskToRemove);
+//   });
+// };
 
 var renderList = function(taskList) {
   // Clear the list
