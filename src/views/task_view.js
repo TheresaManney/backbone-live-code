@@ -17,6 +17,21 @@ var TaskView = Backbone.View.extend({
     this.$el.html(compiledTemplate);
     return this;
     // this = this view instance
+  },
+  // events only affects DOM events, keydown, click, etc...
+  events: {
+    // event - click event
+    // button.alert - what the event is on
+    'click button.alert': 'deleteTask',
+    'click button.success': 'toggleComplete'
+  },
+  deleteTask: function() {
+    this.model.destroy();
+  },
+  toggleComplete: function() {
+    var completed = this.model.get("completed");
+    this.model.set("completed", !completed);
+    this.render();
   }
 });
 
