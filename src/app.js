@@ -8,6 +8,8 @@ import TaskList from './collections/task_list.js';
 
 import TaskView from './views/task_view.js';
 
+import TaskListView from './views/task_list_view.js';
+
 var taskData = [
   {
     // title: 'Mow the lawn',
@@ -109,6 +111,13 @@ var renderList = function(taskList) {
 
 $(document).ready(function() {
   // VIEW STUFF
+  var myTaskListView = new TaskListView({
+    model: myTaskList,
+    template: _.template($('#taskItemTemplate').html()),
+    //changing el to 'main' instead of using its 'div' default
+    el: 'main'
+  });
+  myTaskListView.render();
 
   /*
   // COLLECTION STUFF

@@ -1,11 +1,12 @@
 import Backbone from 'backbone';
 import _ from 'underscore';
 import $ from 'jquery';
-import TaskView from 'task_view.js';
+import TaskView from './task_view.js';
 
 var TaskListView = Backbone.View.extend({
   initialize: function (params) {
     this.template = params.template;
+    console.log(this.el);
   },
   render: function() {
     // Clear the todo items
