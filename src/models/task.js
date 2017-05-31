@@ -11,10 +11,18 @@ var Task = Backbone.Model.extend({
     console.log("Title: " + this.get("title"));
     console.log("Completed: " + this.get("completed"));
   },
-  // gets called any time you call a new instance 
+  // gets called any time you call a new instance
   initialize: function(params) {
     console.log("Starting", params);
     this.logStatus();
+  },
+  toggleComplete: function() {
+    var completed = this.get('completed');
+    if (completed === true) {
+      this.set('completed', false);
+    } else {
+      this.set('completed', true);
+    }
   }
 });
 

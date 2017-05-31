@@ -88,6 +88,7 @@ var renderList = function(taskList) {
   // Loop through rendering each task
   taskList.each(function(task) {
     task.logStatus();
+    task.toggleComplete();
     render(task);
   });
 };
