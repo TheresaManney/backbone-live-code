@@ -17,12 +17,18 @@ var Task = Backbone.Model.extend({
     this.logStatus();
   },
   toggleComplete: function() {
+    // Teacher version
+    var completed = this.get("completed");
+    this.set("completed", !completed);
+    // My version
+    /*
     var completed = this.get('completed');
     if (completed === true) {
       this.set('completed', false);
     } else {
       this.set('completed', true);
     }
+    */
   }
 });
 
