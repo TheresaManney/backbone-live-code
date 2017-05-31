@@ -6,6 +6,8 @@ import Task from './models/task.js';
 
 import TaskList from './collections/task_list.js';
 
+import TaskView from './views/task_view.js';
+
 var taskData = [
   {
     // title: 'Mow the lawn',
@@ -87,9 +89,19 @@ var renderList = function(taskList) {
   $('.todo-items').empty();
   // Loop through rendering each task
   taskList.each(function(task) {
-    task.logStatus();
-    task.toggleComplete();
-    render(task);
+    var taskView = new TaskView({
+      model: task, // get model
+      // the template
+      template: _.template( $('#taskItemTemplate').html() )
+    });
+    // Render the View
+    // Then append the result to the DOM
+    $('.todo-items').append(taskView.render().el);
+
+    // NO NEED FOR THIS ANY MORE THANKS TO THE VIEW
+    // task.logStatus();
+    // task.toggleComplete();
+    // render(task);
   });
 };
 

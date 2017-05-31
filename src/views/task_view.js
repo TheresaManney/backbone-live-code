@@ -11,7 +11,12 @@ var TaskView = Backbone.View.extend({
     this.template = params.template;
   },
   render: function() {
-
+    //el - element [by defult is a div tag]
+    // *More notes on el and other things regarding view in your backboneView.md file*
+    var compiledTemplate = this.template(this.model.toJSON());
+    this.$el.html(compiledTemplate);
+    return this;
+    // this = this view instance
   }
 });
 
