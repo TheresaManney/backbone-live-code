@@ -10,6 +10,11 @@ var Task = Backbone.Model.extend({
     console.log("Model " + this.cid);
     console.log("Title: " + this.get("title"));
     console.log("Completed: " + this.get("completed"));
+  },
+  // gets called any time you call a new instance 
+  initialize: function(params) {
+    console.log("Starting", params);
+    this.logStatus();
   }
 });
 
