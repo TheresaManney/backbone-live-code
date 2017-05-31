@@ -6,9 +6,12 @@ import $ from 'jquery';
 import Task from '../models/task.js';
 
 var TaskView = Backbone.View.extend({
+  // Some time jQuery is used but we decided to use params instead
   initialize: function(params) {
     // Get it the template you want to use for this view
     this.template = params.template;
+
+    this.listenTo(this.model, "change", this.render);
   },
   render: function() {
     //el - element [by defult is a div tag]
@@ -29,9 +32,12 @@ var TaskView = Backbone.View.extend({
     this.model.destroy();
   },
   toggleComplete: function() {
-    var completed = this.model.get("completed");
-    this.model.set("completed", !completed);
-    this.render();
+    // TEACHER WAY
+    this.model.toggleComplete();
+    // MY WAY
+    // var completed = this.model.get("completed");
+    // this.model.set("completed", !completed);
+    // this.render();
   }
 });
 
