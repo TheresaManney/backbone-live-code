@@ -8,9 +8,8 @@ import TaskList from './collections/task_list.js';
 
 var taskData = [
   {
-    title: 'Mow the lawn',
+    // title: 'Mow the lawn',
     description: 'Must be finished before BBQ on Sat afternoon',
-    completed: false
   }, {
     title: 'Go to the Bank',
     description: 'Need to make a transfer',
@@ -18,7 +17,6 @@ var taskData = [
   }, {
     title: 'Tune the Piano',
     description: 'High C is missing or something???',
-    completed: false
 
   }
 ];
@@ -89,6 +87,7 @@ var renderList = function(taskList) {
   $('.todo-items').empty();
   // Loop through rendering each task
   taskList.each(function(task) {
+    task.logStatus();
     render(task);
   });
 };
