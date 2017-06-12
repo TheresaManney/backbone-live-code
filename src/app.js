@@ -10,22 +10,25 @@ import TaskView from './views/task_view.js';
 
 import TaskListView from './views/task_list_view.js';
 
-var taskData = [
-  {
-    // title: 'Mow the lawn',
-    description: 'Must be finished before BBQ on Sat afternoon',
-  }, {
-    title: 'Go to the Bank',
-    description: 'Need to make a transfer',
-    completed: true
-  }, {
-    title: 'Tune the Piano',
-    description: 'High C is missing or something???',
+// var taskData = [
+//   {
+//     // title: 'Mow the lawn',
+//     description: 'Must be finished before BBQ on Sat afternoon',
+//   }, {
+//     title: 'Go to the Bank',
+//     description: 'Need to make a transfer',
+//     completed: true
+//   }, {
+//     title: 'Tune the Piano',
+//     description: 'High C is missing or something???',
+//
+//   }
+// ];
 
-  }
-];
+// var myTaskList = new TaskList(taskData);
+// we no longer need the paramater taskData...
+var myTaskList = new TaskList();
 
-var myTaskList = new TaskList(taskData);
 console.log(">>> Breadcrums #1 (Task list collection creation)");
 
 //can create any attributes we want (including validations in the future)
