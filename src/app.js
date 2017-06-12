@@ -26,6 +26,7 @@ var taskData = [
 ];
 
 var myTaskList = new TaskList(taskData);
+console.log(">>> Breadcrums #1 (Task list collection creation)");
 
 //can create any attributes we want (including validations in the future)
 //this is a new task instance

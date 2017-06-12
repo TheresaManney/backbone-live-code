@@ -6,6 +6,7 @@ import Task from '../models/task.js';
 
 var TaskListView = Backbone.View.extend({
   initialize: function (params) {
+    console.log(">>> Breadcrums #1");
     this.template = params.template;
 
     this.listenTo(this.model, "update", this.render);
@@ -13,6 +14,8 @@ var TaskListView = Backbone.View.extend({
     // console.log(this.el);
   },
   render: function() {
+    console.log(">>> Breadcrums #2");
+
     // Clear the todo items
     this.$('.todo-items').empty();
     // could be called 'self'...means the same as 'that'
@@ -28,6 +31,7 @@ var TaskListView = Backbone.View.extend({
       });
       // rendered the view and appended it to 'todo-items'
       that.$('.todo-items').append(taskView.render().$el);
+
     });
     // this = myView.render().el
     return this;
@@ -37,6 +41,9 @@ var TaskListView = Backbone.View.extend({
   },
   // helper method
   getFormData: function() {
+    console.log(">>> Breadcrums #4");
+
+
     var formTitle = this.$('#title').val();
     // clearing out title...
     this.$('#title').val('');
@@ -61,6 +68,9 @@ var TaskListView = Backbone.View.extend({
     }
   },
   addTask: function() {
+    console.log(">>> Breadcrums #");
+
+
     var task = new Task(this.getFormData());
 
     this.model.add(task);

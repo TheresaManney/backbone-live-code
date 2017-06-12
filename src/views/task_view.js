@@ -16,8 +16,11 @@ var TaskView = Backbone.View.extend({
     // this.$el.addClass("column block");
 
     this.listenTo(this.model, "change", this.render);
+    console.log(">>> Breadcrumbs #");
   },
   render: function() {
+    console.log("*************Breadcrum task_view render ***********");
+
     //el - element [by defult is a div tag]
     // *More notes on el and other things regarding view in your backboneView.md file*
     var compiledTemplate = this.template(this.model.toJSON());
@@ -33,9 +36,13 @@ var TaskView = Backbone.View.extend({
     'click button.success': 'toggleComplete'
   },
   deleteTask: function() {
+    console.log("*************Breadcrum deleteTask ***********");
+
     this.model.destroy();
   },
   toggleComplete: function() {
+    console.log("*************Breadcrum toggleComplete ***********");
+
     // TEACHER WAY
     this.model.toggleComplete();
     // MY WAY
