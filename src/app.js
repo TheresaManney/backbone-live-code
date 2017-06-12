@@ -28,7 +28,8 @@ import TaskListView from './views/task_list_view.js';
 // var myTaskList = new TaskList(taskData);
 // we no longer need the paramater taskData...
 var myTaskList = new TaskList();
-
+//fetch - (without paramater) will go to the [something..api?] configuration and will make that request
+myTaskList.fetch();
 console.log(">>> Breadcrums #1 (Task list collection creation)");
 
 //can create any attributes we want (including validations in the future)
