@@ -10,7 +10,9 @@ import Task from '../models/task.js';
 // in this case it will be a collection of tasks
 // Create a Collection Type
 var TaskList = Backbone.Collection.extend({
-  model: Task
+  model: Task,
+  //assumes we will be retrieving the Restful routes from this url
+  url: 'http://ada-tasklist-api.herokuapp.com/tasks'
 });
 
 export default TaskList;
