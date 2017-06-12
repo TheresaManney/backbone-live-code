@@ -20,6 +20,10 @@ var Task = Backbone.Model.extend({
     // Teacher version
     var completed = this.get("completed");
     this.set("completed", !completed);
+
+    // persist the change so it toggles complete in the api, yay rails!
+    // save is a backbone function that is used on model objects
+    this.save();
     // My version
     /*
     var completed = this.get('completed');

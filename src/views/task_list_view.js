@@ -68,12 +68,16 @@ var TaskListView = Backbone.View.extend({
     }
   },
   addTask: function() {
-    console.log(">>> Breadcrums #");
+    console.log(">>> Breadcrums addTask...");
 
 
     var task = new Task(this.getFormData());
 
-    this.model.add(task);
+    // var new Task = task.create({
+    //
+    // });
+    this.model.create(task);
+    // this.save();
   }
 });
 

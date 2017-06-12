@@ -16,15 +16,14 @@ var TaskView = Backbone.View.extend({
     // this.$el.addClass("column block");
 
     this.listenTo(this.model, "change", this.render);
-    console.log(">>> Breadcrumbs #");
+    console.log(">>> Breadcrumbs #4x (Task view init)");
   },
   render: function() {
-    console.log("*************Breadcrum task_view render ***********");
-
     //el - element [by defult is a div tag]
     // *More notes on el and other things regarding view in your backboneView.md file*
     var compiledTemplate = this.template(this.model.toJSON());
     this.$el.html(compiledTemplate);
+    console.log(">>> Breadcrumbs #5x (Task view render)");
     return this;
     // this = this view instance
   },
@@ -36,15 +35,13 @@ var TaskView = Backbone.View.extend({
     'click button.success': 'toggleComplete'
   },
   deleteTask: function() {
-    console.log("*************Breadcrum deleteTask ***********");
-
+    // destroy is doing more than we though... becuase the Rails API knows destroy and it will associate it with the destroy in a restful Rails route
     this.model.destroy();
   },
   toggleComplete: function() {
-    console.log("*************Breadcrum toggleComplete ***********");
-
     // TEACHER WAY
     this.model.toggleComplete();
+
     // MY WAY
     // var completed = this.model.get("completed");
     // this.model.set("completed", !completed);
